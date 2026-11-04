@@ -1,0 +1,40 @@
+name: Mac and Windows checks
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Functional checks
+        run: python -X utf8 -m unittest discover -s tests -v
+      - name: Windows launchers
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          & .\Install-Windows.cmd --version
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & ".\Reading-Tools\KOReader-Tools-Windows.cmd" --version
+          exit $LASTEXITCODE
+      - name: Mac launchers
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          ./Install-Mac.command --version
+          ./Reading-Tools/KOReader\ Tools.command --version
