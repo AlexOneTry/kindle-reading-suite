@@ -1,0 +1,17 @@
+FBInk 1.25.0, KindleModding ARM EABI build
+Binary provenance: https://github.com/KindleModding/Hotfix/releases/tag/2.5.0
+Corresponding source: https://github.com/KindleModding/FBInk/tree/25c83924f5847eb61cfa6c9ba7d0a64766c19d57
+Build scripts: https://github.com/KindleModding/Hotfix/tree/2.5.0
+License: licenses/FBInk.txt
+
+Go runtime and golang.org/x packages including the Go fonts
+License notices: licenses/Go.txt, licenses/x-image.txt, licenses/x-net.txt, licenses/x-text.txt
+
+CA bundle
+Mozilla public roots, packaged by the curl project:
+https://curl.se/docs/caextract.html
+The bundle's source and date are in the header of cacert.pem.
+
+The catalog uses the Search GraphQL query from Yandex Books Desktop:
+https://github.com/Gorbachevvv/yandex-books-desktop/blob/main/Services/YandexBooksApiClient.cs
+License: licenses/Yandex-Books-Desktop.txt

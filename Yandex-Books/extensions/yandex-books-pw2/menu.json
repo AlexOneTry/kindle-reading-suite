@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "name": "Yandex Books",
+      "priority": 0,
+      "action": "/bin/sh /mnt/us/extensions/yandex-books-pw2/start.sh",
+      "exitmenu": true
+    }
+  ]
+}

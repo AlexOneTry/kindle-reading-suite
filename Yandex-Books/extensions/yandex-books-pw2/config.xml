@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+    <information>
+        <name>Yandex Books</name>
+        <version>0.6.0</version>
+        <author>WorkHUB</author>
+        <id>yandex-books-pw2</id>
+    </information>
+    <menus>
+        <menu type="json" dynamic="true">menu.json</menu>
+    </menus>
+</extension>
